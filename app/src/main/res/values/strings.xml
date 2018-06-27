@@ -1,0 +1,14 @@
+<resources>
+	<string name="app_name">Sunrise</string>
+	<string name="choose_city">Выбрать город</string>
+
+	<!--Errors-->
+	<string name="error_fail_loading_coords">Ошибка получения координат</string>
+	<string name="error_fail_loading_info">Не удалось загрузить информацию</string>
+
+	<!--Common expressions-->
+	<string name="common_permissions_not_found">Разрешения не получены</string>
+	<string name="common_sunset">Восход</string>
+	<string name="common_sunrise">Закат</string>
+	<string name="common_not_available">N/A</string>
+</resources>

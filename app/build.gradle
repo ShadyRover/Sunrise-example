@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+android {
+	compileSdkVersion 27
+	defaultConfig {
+		applicationId "com.sshex.sunrise"
+		minSdkVersion 21
+		targetSdkVersion 27
+		versionCode 1
+		versionName "1.0"
+		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+	kapt {
+		generateStubs = true
+	}
+}
+
+dependencies {
+	implementation fileTree(include: ['*.jar'], dir: 'libs')
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+	//Support
+	implementation "com.android.support:appcompat-v7:$support_library"
+	implementation "com.android.support:design:$support_library"
+	implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+	//GP
+	implementation "com.google.android.gms:play-services-places:$play_services"
+	implementation "com.google.android.gms:play-services-location:$play_services"
+
+	//Koin
+	implementation "org.koin:koin-core:$koin_version"
+	implementation "org.koin:koin-android:$koin_version"
+	implementation "org.koin:koin-android-architecture:$koin_version"
+
+	//Rx
+	implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+	implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+	implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
+	//Moxy
+	implementation "com.arello-mobile:moxy:$moxy_version"
+	implementation "com.arello-mobile:moxy-app-compat:$moxy_version"
+	implementation "com.arello-mobile:moxy-android:$moxy_version"
+	annotationProcessor "com.arello-mobile:moxy-compiler:$moxy_version"
+	kapt "com.arello-mobile:moxy-compiler:$moxy_version"
+
+	//Retrofit
+	implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+	implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+	implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+}
