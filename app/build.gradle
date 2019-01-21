@@ -24,6 +24,10 @@ android {
 	kapt {
 		generateStubs = true
 	}
+
+	lintOptions {
+		tasks.lint.enabled = false
+	}
 }
 
 dependencies {
